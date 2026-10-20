@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PedroZey · Senior Full Stack · Portfólio para o iFood</title>
-<meta name="description" content="Portfólio técnico de PedroZey para a vaga Senior Full Stack Software Engineer do iFood Pago Benefícios: Java 17 + Spring Boot, Kubernetes GitOps, TDD, CI/CD e IA aplicada, com números e provas.">
+<title>Pedro Henrique · Senior Full Stack · Portfólio</title>
+<meta name="description" content="Portfólio técnico de Pedro Henrique, Senior Full Stack: Java 17 + Spring Boot, Kubernetes GitOps, TDD, CI/CD e IA aplicada, com números e diagramas.">
 <meta name="theme-color" content="#f6f6f3">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='4' fill='%23f6f6f3'/%3E%3Ccircle cx='8' cy='8' r='4' fill='%23161513'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 <header class="topbar">
@@ -15,7 +15,7 @@
   <div class="wrap topbar-in">
     <a class="brand" href="#inicio"><span class="brand-dot" aria-hidden="true"></span>Pedro Moreno</a>
     <nav class="nav" aria-label="Seções">
-      <a href="#match">Match</a>
+      <a href="#entregas">Entregas</a>
       <a href="#projetos">Projetos</a>
       <a href="#metodo">Método</a>
       <a href="#ia">IA</a>
@@ -28,11 +28,11 @@
 
 <main id="inicio" class="wrap">
   <section class="hero">
-    <p class="kicker">Portfólio mirado · iFood req 52447 · Senior Full Stack · B2C Tech Benefícios</p>
+    <p class="kicker">Portfólio · Senior Full Stack · Backend em produção</p>
     <h1>Backend em escala, qualidade medida e IA em produção.</h1>
     <p class="lede">Olá, seja bem-vindo ao meu portfólio! Eu me chamo <strong>Pedro Henrique</strong>. Aqui você encontra alguns dos meus projetos: sistemas reais em produção, com os números que importam, os diagramas dos fluxos que eu opero e o método que eu uso para entregar com qualidade. Navegue à vontade.</p>
     <div class="tldr">
-      <p><strong>TL;DR:</strong> este portfólio reúne oito sistemas em produção, com números verificados e diagramas dos fluxos que eu opero. A tabela de match cruza cada requisito com a evidência. Os destaques Maestro e Kai abrem a lista de projetos.</p>
+      <p><strong>TL;DR:</strong> este portfólio reúne oito sistemas em produção, com números verificados e diagramas dos fluxos que eu opero. A tabela de capacidades cruza cada skill com a evidência. Os destaques Maestro e Kai abrem a lista de projetos.</p>
     </div>
     <dl class="numbers">
       <div><dt>Java 17 · Spring Boot 3.4.3</dt><dd>microsserviço fiscal multi-tenant, Sentry + JUnit</dd></div>
@@ -42,19 +42,19 @@
     </dl>
     <p class="hero-links">
       <a class="btn" href="https://github.com/PedroZey">GitHub: PedroZey</a>
-      <a class="btn ghost" href="#match">Ver o match com a vaga</a>
+      <a class="btn ghost" href="#entregas">Ver o que eu entrego</a>
     </p>
     <p class="fineprint">Repos privados: trechos e números abaixo, acesso ao código sob pedido na entrevista.</p>
   </section>
 
-  <section id="match" class="block">
-    <p class="sec-label">01 · Por que eu sirvo para esta vaga</p>
-    <h2>Match com o cardápio do iFood</h2>
-    <p class="sec-intro">Cada linha da vaga, respondida com uma evidência concreta. Conclusão primeiro: <strong>cubro a stack obrigatória e os diferenciais de IA</strong>. Radar honesto no fim da tabela.</p>
+  <section id="entregas" class="block">
+    <p class="sec-label">01 · Carta de apresentação técnica</p>
+    <h2>O que eu entrego</h2>
+    <p class="sec-intro">Cada capacidade com uma evidência concreta. Conclusão primeiro: <strong>cubro backend enterprise e IA aplicada</strong>. Radar honesto no fim da tabela.</p>
     <div class="table-scroll">
     <table>
-      <caption>O que a vaga pede e onde eu provo</caption>
-      <thead><tr><th scope="col">A vaga pede</th><th scope="col">Minha evidência</th><th scope="col">Onde ver</th></tr></thead>
+      <caption>Capacidade, evidência e onde ver</caption>
+      <thead><tr><th scope="col">Capacidade</th><th scope="col">Evidência</th><th scope="col">Onde ver</th></tr></thead>
       <tbody>
         <tr><td>Java 17 + Spring Boot</td><td>Microsserviço fiscal: REST multi-tenant, API key, PDF/XLSX, SFTP, Sentry</td><td>jasper-service · pom + controller</td></tr>
         <tr><td>Hexagonal, SOLID, Clean Code</td><td>Camadas controller/service/dto; ADRs e ledger append-only em outro serviço</td><td>jasper-service · estoque-inteligente</td></tr>
@@ -79,12 +79,12 @@
   <section id="projetos" class="block">
     <p class="sec-label">02 · O que eu já botei no ar</p>
     <h2>Projetos, sem marketing</h2>
-    <p class="sec-intro">Oito peças. Cada uma com o que é, o número que importa e o arquivo que prova. Ordem: do mais parecido com a vaga para o mais ambicioso.</p>
+    <p class="sec-intro">Oito peças. Cada uma com o que é, o número que importa e o arquivo que prova. Ordem: dos sistemas centrais aos experimentos de plataforma.</p>
 
     <article class="proj">
       <div class="proj-head"><h3><span class="idx">01</span>jasper-service <span class="tag">em produção</span></h3>
       <p class="stack">Java 17 · Spring Boot 3.4.3 · JasperReports · Sentry · HikariCP · Postgres · Docker</p></div>
-      <p>Microsserviço de relatórios fiscais multi-tenant: cada tenant com seu banco, auth por API key, exportação PDF/XLSX e publicação via SFTP. É a stack obrigatória da vaga, em código que recebe commit meu toda semana.</p>
+      <p>Microsserviço de relatórios fiscais multi-tenant: cada tenant com seu banco, auth por API key, exportação PDF/XLSX e publicação via SFTP. É a stack enterprise mais pedida do mercado, em código que recebe commit meu toda semana.</p>
       <ul>
         <li><strong>10 arquivos de teste JUnit:</strong> serviço, guard de paths remotos, publisher SFTP, exposição do actuator.</li>
         <li><strong>Sentry plugado</strong> (variante Jakarta do Spring Boot 3). Erro rastreado, não log perdido.</li>
@@ -206,7 +206,7 @@
   </section>
 
   <section id="javak8s" class="block">
-    <p class="sec-label">05 · O que a vaga mais quer</p>
+    <p class="sec-label">05 · O que o mercado mais pede</p>
     <h2>Java e Kubernetes, sem truque</h2>
     <div class="cols">
       <div>
@@ -309,6 +309,6 @@ public class ReportController {
   </section>
 </main>
 
-<script src="app.js?v=3" defer></script>
+<script src="app.js?v=4" defer></script>
 </body>
 </html>
