@@ -66,9 +66,6 @@
       entries.forEach(function (e) {
         if (!e.isIntersecting) return;
         var fig = e.target;
-        fig.querySelectorAll(".ln:not(.dash)").forEach(function (ln) {
-          ln.setAttribute("pathLength", "1");
-        });
         fig.classList.add("draw");
         fObs.unobserve(fig);
       });
