@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PedroZey — Senior Full Stack · Portfólio para o iFood</title>
 <meta name="description" content="Portfólio técnico de PedroZey para a vaga Senior Full Stack Software Engineer do iFood Pago Benefícios: Java 17 + Spring Boot, Kubernetes GitOps, TDD, CI/CD e IA aplicada — com números e provas.">
-<meta name="theme-color" content="#0c1210">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='4' fill='%230c1210'/%3E%3Ccircle cx='8' cy='8' r='4' fill='%232fbf71'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#f6f6f3">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='4' fill='%23f6f6f3'/%3E%3Ccircle cx='8' cy='8' r='4' fill='%23161513'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header class="topbar">
+  <div class="progress" id="progress" aria-hidden="true"></div>
   <div class="wrap topbar-in">
     <a class="brand" href="#inicio"><span class="brand-dot" aria-hidden="true"></span>pedrozey<span class="brand-sub">/ifood</span></a>
     <nav class="nav" aria-label="Seções">
@@ -35,13 +36,13 @@
     </div>
     <dl class="numbers">
       <div><dt>Java 17 · Spring Boot 3.4.3</dt><dd>microsserviço fiscal multi-tenant, Sentry + JUnit</dd></div>
-      <div><dt>2306/2306 testes verdes</dt><dd>gateway lb-proxer, release v0.4.0, em produção</dd></div>
+      <div><dt><span data-count="2306">2306</span>/2306 testes verdes</dt><dd>gateway lb-proxer, release v0.4.0, em produção</dd></div>
       <div><dt>K8s GitOps operando</dt><dd>RKE2 + Rancher + Fleet, hml e prod</dd></div>
-      <div><dt>301 arquivos de teste</dt><dd>vitest no atendimentokonfig, CI por merge</dd></div>
+      <div><dt><span data-count="301">301</span> arquivos de teste</dt><dd>vitest no atendimentokonfig, CI por merge</dd></div>
     </dl>
     <p class="hero-links">
       <a class="btn" href="https://github.com/PedroZey">GitHub: PedroZey</a>
-      <a class="btn ghost" href="https://lb.resolvoia.com.br">Ver o gateway no ar</a>
+      <a class="btn ghost" href="#match">Ver o match com a vaga</a>
     </p>
     <p class="fineprint">Repos privados — trechos e números abaixo, acesso ao código sob pedido na entrevista.</p>
   </section>
@@ -65,7 +66,7 @@
         <tr><td>CI/CD + deploy strategies</td><td>Pipeline develop→main→Fleet por digest; cutover planejado do gateway</td><td>docs/PIPELINE.md · plano cutover</td></tr>
         <tr><td>Resiliência</td><td>Failover multi-provider, erros 400/401 claros, health checks</td><td>lb-proxer · /conta · /__metrics</td></tr>
         <tr><td>OTel/Prometheus + Sentry</td><td>Métricas + painel NOC próprios; Sentry no Spring Boot 3</td><td>lb-proxer · jasper-service pom</td></tr>
-        <tr><td>IA First + LLMs</td><td>Gateway LLM próprio em produção; RAG ponta a ponta; revisão com IA</td><td>lb.resolvoia.com.br · ai-e2e</td></tr>
+        <tr><td>IA First + LLMs</td><td>Gateway LLM próprio em produção; RAG ponta a ponta; revisão com IA</td><td>gateway em prod · ai-e2e</td></tr>
         <tr><td>Agentes, RAG, MCP</td><td>Harness Claude Agent SDK com travas; MCP server de docs; orquestração</td><td>auditoria · FastDocs</td></tr>
         <tr><td>Dockerfile, IaC, Linux</td><td>Builds reproduzíveis, manifests Kustomize, VPS próprios operados</td><td>Dockerfiles · k8s/ · Coolify</td></tr>
         <tr><td>Domínio fiscal/financeiro BR</td><td>NFSe, conciliação, transferências, boletos — dinheiro de verdade</td><td>jasper-service · accounts</td></tr>
@@ -81,7 +82,7 @@
     <p class="sec-intro">Seis peças. Cada uma com o que é, o número que importa e o arquivo que prova. Ordem: do mais parecido com a vaga para o mais ambicioso.</p>
 
     <article class="proj">
-      <div class="proj-head"><h3>jasper-service <span class="tag hot">match direto · Java</span></h3>
+      <div class="proj-head"><h3><span class="idx">01</span>jasper-service <span class="tag">em produção</span></h3>
       <p class="stack">Java 17 · Spring Boot 3.4.3 · JasperReports · Sentry · HikariCP · Postgres · Docker</p></div>
       <p>Microsserviço de relatórios fiscais multi-tenant: cada tenant com seu banco, auth por API key, exportação PDF/XLSX e publicação via SFTP. É a stack obrigatória da vaga, em código que recebe commit meu toda semana.</p>
       <ul>
@@ -89,23 +90,21 @@
         <li><strong>Sentry plugado</strong> (variante Jakarta do Spring Boot 3) — erro rastreado, não log perdido.</li>
         <li><strong>303 linhas de ReportService</strong> com tratamento de formato, erro 400 claro e 500 instrumentado.</li>
       </ul>
-      <p class="proof">Prova: <code>pom.xml</code> (java.version 17, spring-boot 3.4.3) · <code>ReportController.java</code> · <code>src/test/…</code></p>
     </article>
 
     <article class="proj">
-      <div class="proj-head"><h3>lb-proxer <span class="tag">em produção</span></h3>
+      <div class="proj-head"><h3><span class="idx">02</span>lb-proxer <span class="tag">em produção</span></h3>
       <p class="stack">TypeScript · Node 22 · Vitest · 2 front-ends · Docker · Coolify</p></div>
-      <p>Gateway/load balancer multi-provider de LLMs, no ar em <a href="https://lb.resolvoia.com.br">lb.resolvoia.com.br</a>. Roteia por modelo, escolhe a assinatura certa, falha com mensagem útil. Releases no formato TL;DR → Por quê → Impacto → Como não repete.</p>
+      <p>Gateway/load balancer multi-provider de LLMs em produção, em domínio privado. Roteia por modelo, escolhe a assinatura certa, falha com mensagem útil. Releases no formato TL;DR → Por quê → Impacto → Como não repete.</p>
       <ul>
         <li><strong>Suite 2306/2306 verde</strong> na v0.4.0, com 23 testes novos travando a matriz caminho×modelo×stream.</li>
         <li><strong>184 arquivos de teste</strong>, typecheck limpo, deploy com prova viva em produção.</li>
         <li><strong>Observabilidade própria:</strong> endpoint de métricas e painel estilo NOC — conclusão antes do gráfico.</li>
       </ul>
-      <p class="proof">Prova: <code>releases/v0.4.0.md</code> · <code>src/observability/</code> · produção respondendo</p>
     </article>
 
     <article class="proj">
-      <div class="proj-head"><h3>atendimentokonfig <span class="tag">K8s GitOps</span></h3>
+      <div class="proj-head"><h3><span class="idx">03</span>atendimentokonfig <span class="tag">K8s GitOps</span></h3>
       <p class="stack">TypeScript · Vitest · K8s RKE2 · Rancher · Fleet · Kustomize · Supabase PG · Redis</p></div>
       <p>Sistema de atendimento com deploy GitOps de verdade: o merge gera a imagem, o CI commita o digest no manifesto, o Fleet aplica. Homologação espelha produção de propósito — o CI quebra se os manifestos divergirem.</p>
       <ul>
@@ -113,39 +112,35 @@
         <li><strong>Infra documentada</strong> em INFRA.md + PIPELINE.md: namespaces, réplicas, sealed secrets, runners.</li>
         <li><strong>Mentoria prática:</strong> ensinei operação K8s hands-on neste cluster — sei explicar, não só aplicar yaml.</li>
       </ul>
-      <p class="proof">Prova: <code>docs/INFRA.md</code> · <code>docs/PIPELINE.md</code> · <code>k8s/prod/</code></p>
     </article>
 
     <article class="proj">
-      <div class="proj-head"><h3>auditoria <span class="tag">agentes + MCP</span></h3>
+      <div class="proj-head"><h3><span class="idx">04</span>auditoria <span class="tag">agentes + MCP</span></h3>
       <p class="stack">TypeScript · Claude Agent SDK · MCP · Vitest · coverage v8</p></div>
       <p>Módulo fiscal com agentes de IA operando ferramentas reais: harness com teto de chamadas, retry travado e superfície explícita de tools. Teste de contrato compara cada ferramenta contra SQL independente — e inclui tentativa de injeção.</p>
       <ul>
         <li><strong>138 arquivos de teste</strong> no back/front, com coverage configurado.</li>
         <li><strong>Fronteira com a SDK isolada</strong> num arquivo só — o resto do código não sabe que IA existe.</li>
       </ul>
-      <p class="proof">Prova: <code>src/services/agentes-harness.ts</code> · <code>tests/ferramentas-fiscais.test.ts</code></p>
     </article>
 
     <article class="proj">
-      <div class="proj-head"><h3>FastDocs <span class="tag">MCP server</span></h3>
+      <div class="proj-head"><h3><span class="idx">05</span>FastDocs <span class="tag">MCP server</span></h3>
       <p class="stack">TypeScript · Fastify · Next.js · MCP SDK · React Flow</p></div>
       <p>Servidor MCP de documentação AI-first: detecta framework do repo, monta grafo de docs, expõe Postman Lite e GitHub Action. Detector com TDD por fixtures (tmpdir real, setup/teardown).</p>
       <ul>
         <li><strong>Detector testado</strong> para next-app-router, pages, NestJS e Express.</li>
       </ul>
-      <p class="proof">Prova: <code>apps/mcp/src/analyzers/framework-detector.test.ts</code></p>
     </article>
 
     <article class="proj">
-      <div class="proj-head"><h3>railyard <span class="tag">plataforma</span></h3>
+      <div class="proj-head"><h3><span class="idx">06</span>railyard <span class="tag">plataforma</span></h3>
       <p class="stack">TypeScript · pnpm + Turbo · Prisma · Vitest · Docker</p></div>
       <p>PaaS self-hosted estilo Railway para uso próprio: git push, build zero-config, HTTPS, databases em um clique, environments efêmeros por PR. M0–M2 prontos, com design docs e critério de aceite por task.</p>
       <ul>
         <li><strong>125 arquivos de teste</strong>; tasks com checkbox e ordem de construção.</li>
         <li>Quem constrói plataforma entende deploy — não só usa.</li>
       </ul>
-      <p class="proof">Prova: <code>docs/design/architecture.md</code> · <code>docs/tasks/00-INDEX.md</code></p>
     </article>
   </section>
 
@@ -223,7 +218,7 @@ public class ReportController {
     <h3 class="fig-title">Deploy GitOps: do merge ao pod, sem mão humana</h3>
     <figure class="fig">
       <svg viewBox="0 0 720 190" role="img" aria-label="Fluxo: merge em develop ou main dispara CI, gera imagem, commita digest e o Fleet aplica em homologação ou produção">
-        <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2fbf71"/></marker></defs>
+        <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#161513"/></marker></defs>
         <g font-family="ui-monospace,monospace" font-size="12" text-anchor="middle">
           <rect x="8" y="70" width="110" height="44" rx="6" class="box"/><text x="63" y="88" class="t">merge</text><text x="63" y="104" class="s">develop/main</text>
           <rect x="142" y="70" width="130" height="44" rx="6" class="box"/><text x="207" y="88" class="t">CI</text><text x="207" y="104" class="s">migrate·test·build</text>
