@@ -221,24 +221,28 @@ tr.radar td { color: var(--mut); font-style: italic; background: #f1f0eb; }
 .fig .ln { stroke: var(--solid); stroke-width: 1.6; }
 .fig .ln.dash { stroke: var(--dim); stroke-dasharray: 4 3; }
 .fig .arrowhead { fill: var(--solid); }
-.fig .packet { opacity: 0; }
-.fig.draw .packet { animation: travel 1.6s linear infinite; }
-@keyframes travel {
-  0% { offset-distance: 0%; opacity: 0; }
-  12% { opacity: 1; }
-  88% { opacity: 1; }
-  100% { offset-distance: 100%; opacity: 0; }
-}
 .fig .flow-head { fill: var(--solid); }
-.fig.draw .flow-head {
-  animation: headflash 1.6s ease-in-out infinite;
-  transform-box: fill-box;
-  transform-origin: center;
+.fig.draw .arrow-anim { animation: arrowfade 2.2s ease-in-out infinite; }
+@keyframes arrowfade {
+  0%, 74% { opacity: 1; }
+  88%, 100% { opacity: 0; }
 }
-@keyframes headflash {
-  0%, 72% { transform: scale(1); }
-  90% { transform: scale(1.35); }
-  100% { transform: scale(1); }
+.fig.draw .arrow-anim .ln {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: arrowdraw 2.2s ease-out infinite;
+}
+@keyframes arrowdraw {
+  0% { stroke-dashoffset: 1; }
+  35%, 100% { stroke-dashoffset: 0; }
+}
+.fig.draw .arrow-anim .flow-head {
+  opacity: 0;
+  animation: headpop 2.2s ease-out infinite;
+}
+@keyframes headpop {
+  0%, 30% { opacity: 0; }
+  42%, 100% { opacity: 1; }
 }
 .fig figcaption { font-size: 0.86rem; color: var(--mut); margin-top: 10px; }
 
@@ -260,7 +264,8 @@ tr.radar td { color: var(--mut); font-style: italic; background: #f1f0eb; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .fig .packet { display: none; }
-  .fig.draw .flow-head { animation: none; }
+  .fig.draw .arrow-anim,
+  .fig.draw .arrow-anim .ln,
+  .fig.draw .arrow-anim .flow-head { animation: none; }
   * { transition: none !important; }
 }

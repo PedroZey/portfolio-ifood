@@ -59,9 +59,8 @@
     counters.forEach(function (el) { cObs.observe(el); });
   }
 
-  // 4. Diagramas: linha sólida + pacote viajando + ponta que recebe.
-  // Troca o marker compartilhado por pontas explícitas para sincronizar
-  // o flash de cada ponta com a chegada do seu pacote.
+  // 4. Diagramas: a seta inteira se desenha em loop, em cascata.
+  // Linha cresce, ponta aparece na chegada, segura, apaga, repete.
   var figs = Array.prototype.slice.call(document.querySelectorAll(".fig"));
   function enhance(fig) {
     if (fig.dataset.enhanced) return;
@@ -74,6 +73,7 @@
       var x2 = parseFloat(ln.getAttribute("x2"));
       var y2 = parseFloat(ln.getAttribute("y2"));
       ln.removeAttribute("marker-end");
+      ln.setAttribute("pathLength", "1");
       var dx = x2 - x1, dy = y2 - y1;
       var len = Math.sqrt(dx * dx + dy * dy) || 1;
       dx /= len; dy /= len;
@@ -87,15 +87,15 @@
       head.setAttribute("stroke", "#161513");
       head.setAttribute("stroke-width", "1.5");
       head.setAttribute("stroke-linejoin", "round");
-      head.style.animationDelay = (i * 0.22) + "s";
-      ln.parentNode.insertBefore(head, ln.nextSibling);
-      var dot = document.createElementNS(NS, "circle");
-      dot.setAttribute("r", "3.2");
-      dot.setAttribute("fill", "#161513");
-      dot.setAttribute("class", "packet");
-      dot.style.offsetPath = 'path("M' + x1 + " " + y1 + " L" + x2 + " " + y2 + '")';
-      dot.style.animationDelay = (i * 0.22) + "s";
-      ln.parentNode.insertBefore(dot, head.nextSibling);
+      var g = document.createElementNS(NS, "g");
+      g.setAttribute("class", "arrow-anim");
+      var delay = (i * 0.25) + "s";
+      g.style.animationDelay = delay;
+      ln.style.animationDelay = delay;
+      head.style.animationDelay = delay;
+      ln.parentNode.insertBefore(g, ln);
+      g.appendChild(ln);
+      g.appendChild(head);
     });
   }
   figs.forEach(enhance);
