@@ -230,6 +230,15 @@ tr.radar td { color: var(--mut); font-style: italic; background: #f1f0eb; }
 .fig.draw .ln:not(.dash):nth-of-type(4) { animation-delay: 0.45s; }
 .fig.draw .ln:not(.dash):nth-of-type(5) { animation-delay: 0.6s; }
 @keyframes flow { from { stroke-dashoffset: 8; } to { stroke-dashoffset: 0; } }
+#ar path {
+  animation: headpulse 1s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@keyframes headpulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(1.2); }
+}
 .fig figcaption { font-size: 0.86rem; color: var(--mut); margin-top: 10px; }
 
 /* responsive */
@@ -251,5 +260,6 @@ tr.radar td { color: var(--mut); font-style: italic; background: #f1f0eb; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .fig.draw .ln:not(.dash) { animation: none; stroke-dasharray: none; }
+  #ar path { animation: none; }
   * { transition: none !important; }
 }
