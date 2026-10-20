@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PedroZey — Senior Full Stack · Portfólio para o iFood</title>
+<meta name="description" content="Portfólio técnico de PedroZey para a vaga Senior Full Stack Software Engineer do iFood Pago Benefícios: Java 17 + Spring Boot, Kubernetes GitOps, TDD, CI/CD e IA aplicada — com números e provas.">
+<meta name="theme-color" content="#0c1210">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='4' fill='%230c1210'/%3E%3Ccircle cx='8' cy='8' r='4' fill='%232fbf71'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="#inicio"><span class="brand-dot" aria-hidden="true"></span>pedrozey<span class="brand-sub">/ifood</span></a>
+    <nav class="nav" aria-label="Seções">
+      <a href="#match">Match</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#metodo">Método</a>
+      <a href="#ia">IA</a>
+      <a href="#javak8s">Java·K8s</a>
+      <a href="#diagramas">Diagramas</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio" class="wrap">
+  <section class="hero">
+    <p class="kicker">Portfólio mirado · iFood req 52447 · Senior Full Stack · B2C Tech Benefícios</p>
+    <h1>Backend em escala, qualidade medida e IA em produção.</h1>
+    <p class="lede">Sou o <strong>PedroZey</strong>. Escrevo serviços que aguentam produção de verdade: Java 17 com Spring Boot no fiscal, gateway de LLMs próprio no ar, Kubernetes com GitOps documentado e suítes de teste que eu cito pelo placar — porque placar é o que prova.</p>
+    <div class="tldr">
+      <p><strong>TL;DR para o recrutador:</strong> se a vaga pede Java 17 + Spring, K8s, TDD, CI/CD e mentalidade IA First, eu marco os cinco com código rodando. O resto desta página é a evidência, em tabelas curtas.</p>
+    </div>
+    <dl class="numbers">
+      <div><dt>Java 17 · Spring Boot 3.4.3</dt><dd>microsserviço fiscal multi-tenant, Sentry + JUnit</dd></div>
+      <div><dt>2306/2306 testes verdes</dt><dd>gateway lb-proxer, release v0.4.0, em produção</dd></div>
+      <div><dt>K8s GitOps operando</dt><dd>RKE2 + Rancher + Fleet, hml e prod</dd></div>
+      <div><dt>301 arquivos de teste</dt><dd>vitest no atendimentokonfig, CI por merge</dd></div>
+    </dl>
+    <p class="hero-links">
+      <a class="btn" href="https://github.com/PedroZey">GitHub: PedroZey</a>
+      <a class="btn ghost" href="https://lb.resolvoia.com.br">Ver o gateway no ar</a>
+    </p>
+    <p class="fineprint">Repos privados — trechos e números abaixo, acesso ao código sob pedido na entrevista.</p>
+  </section>
+
+  <section id="match" class="block">
+    <p class="sec-label">01 · Por que eu sirvo para esta vaga</p>
+    <h2>Match com o cardápio do iFood</h2>
+    <p class="sec-intro">Cada linha da vaga, respondida com uma evidência concreta. Conclusão primeiro: <strong>cubro a stack obrigatória e os diferenciais de IA</strong>. Radar honesto no fim da tabela.</p>
+    <div class="table-scroll">
+    <table>
+      <caption>O que a vaga pede e onde eu provo</caption>
+      <thead><tr><th scope="col">A vaga pede</th><th scope="col">Minha evidência</th><th scope="col">Onde ver</th></tr></thead>
+      <tbody>
+        <tr><td>Java 17 + Spring Boot</td><td>Microsserviço fiscal: REST multi-tenant, API key, PDF/XLSX, SFTP, Sentry</td><td>jasper-service · pom + controller</td></tr>
+        <tr><td>Hexagonal, SOLID, Clean Code</td><td>Camadas controller/service/dto; ADRs e ledger append-only em outro serviço</td><td>jasper-service · estoque-inteligente</td></tr>
+        <tr><td>REST + OpenAPI, TLS/mTLS</td><td>REST versionado por tenant; gateway com TLS e admin autenticado</td><td>jasper-service · lb-proxer</td></tr>
+        <tr><td>AWS + Kubernetes</td><td>RKE2 + Rancher + Fleet, Kustomize, sealed secrets, hml e prod</td><td>atendimentokonfig · docs/INFRA.md</td></tr>
+        <tr><td>Event-driven (Kafka/MSK)</td><td>Workers + filas Redis/Postgres hoje; padrão dominado, broker AWS no radar</td><td>pague-menos · worker cron</td></tr>
+        <tr><td>PostgreSQL + Redis</td><td>Supabase PG sa-east-1 com migrations no CI; Redis próprio por namespace</td><td>atendimentokonfig · kay</td></tr>
+        <tr><td>TDD + testes + code review</td><td>2306/2306 no gateway; 301 suites no atendimento; JUnit no Java; teste anti-SQL-injection</td><td>releases v0.2–v0.4 · suites vitest</td></tr>
+        <tr><td>CI/CD + deploy strategies</td><td>Pipeline develop→main→Fleet por digest; cutover planejado do gateway</td><td>docs/PIPELINE.md · plano cutover</td></tr>
+        <tr><td>Resiliência</td><td>Failover multi-provider, erros 400/401 claros, health checks</td><td>lb-proxer · /conta · /__metrics</td></tr>
+        <tr><td>OTel/Prometheus + Sentry</td><td>Métricas + painel NOC próprios; Sentry no Spring Boot 3</td><td>lb-proxer · jasper-service pom</td></tr>
+        <tr><td>IA First + LLMs</td><td>Gateway LLM próprio em produção; RAG ponta a ponta; revisão com IA</td><td>lb.resolvoia.com.br · ai-e2e</td></tr>
+        <tr><td>Agentes, RAG, MCP</td><td>Harness Claude Agent SDK com travas; MCP server de docs; orquestração</td><td>auditoria · FastDocs</td></tr>
+        <tr><td>Dockerfile, IaC, Linux</td><td>Builds reproduzíveis, manifests Kustomize, VPS próprios operados</td><td>Dockerfiles · k8s/ · Coolify</td></tr>
+        <tr><td>Domínio fiscal/financeiro BR</td><td>NFSe, conciliação, transferências, boletos — dinheiro de verdade</td><td>jasper-service · accounts</td></tr>
+        <tr class="radar"><td>Go · Kafka/MSK em escala</td><td>Radar de estudo declarado — não vendo o que ainda não operei</td><td> honestidade documentada </td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section id="projetos" class="block">
+    <p class="sec-label">02 · O que eu já botei no ar</p>
+    <h2>Projetos, sem marketing</h2>
+    <p class="sec-intro">Seis peças. Cada uma com o que é, o número que importa e o arquivo que prova. Ordem: do mais parecido com a vaga para o mais ambicioso.</p>
+
+    <article class="proj">
+      <div class="proj-head"><h3>jasper-service <span class="tag hot">match direto · Java</span></h3>
+      <p class="stack">Java 17 · Spring Boot 3.4.3 · JasperReports · Sentry · HikariCP · Postgres · Docker</p></div>
+      <p>Microsserviço de relatórios fiscais multi-tenant: cada tenant com seu banco, auth por API key, exportação PDF/XLSX e publicação via SFTP. É a stack obrigatória da vaga, em código que recebe commit meu toda semana.</p>
+      <ul>
+        <li><strong>10 arquivos de teste JUnit</strong> — serviço, guard de paths remotos, publisher SFTP, exposição do actuator.</li>
+        <li><strong>Sentry plugado</strong> (variante Jakarta do Spring Boot 3) — erro rastreado, não log perdido.</li>
+        <li><strong>303 linhas de ReportService</strong> com tratamento de formato, erro 400 claro e 500 instrumentado.</li>
+      </ul>
+      <p class="proof">Prova: <code>pom.xml</code> (java.version 17, spring-boot 3.4.3) · <code>ReportController.java</code> · <code>src/test/…</code></p>
+    </article>
+
+    <article class="proj">
+      <div class="proj-head"><h3>lb-proxer <span class="tag">em produção</span></h3>
+      <p class="stack">TypeScript · Node 22 · Vitest · 2 front-ends · Docker · Coolify</p></div>
+      <p>Gateway/load balancer multi-provider de LLMs, no ar em <a href="https://lb.resolvoia.com.br">lb.resolvoia.com.br</a>. Roteia por modelo, escolhe a assinatura certa, falha com mensagem útil. Releases no formato TL;DR → Por quê → Impacto → Como não repete.</p>
+      <ul>
+        <li><strong>Suite 2306/2306 verde</strong> na v0.4.0, com 23 testes novos travando a matriz caminho×modelo×stream.</li>
+        <li><strong>184 arquivos de teste</strong>, typecheck limpo, deploy com prova viva em produção.</li>
+        <li><strong>Observabilidade própria:</strong> endpoint de métricas e painel estilo NOC — conclusão antes do gráfico.</li>
+      </ul>
+      <p class="proof">Prova: <code>releases/v0.4.0.md</code> · <code>src/observability/</code> · produção respondendo</p>
+    </article>
+
+    <article class="proj">
+      <div class="proj-head"><h3>atendimentokonfig <span class="tag">K8s GitOps</span></h3>
+      <p class="stack">TypeScript · Vitest · K8s RKE2 · Rancher · Fleet · Kustomize · Supabase PG · Redis</p></div>
+      <p>Sistema de atendimento com deploy GitOps de verdade: o merge gera a imagem, o CI commita o digest no manifesto, o Fleet aplica. Homologação espelha produção de propósito — o CI quebra se os manifestos divergirem.</p>
+      <ul>
+        <li><strong>301 arquivos de teste</strong>, incluindo regra financeira BR (parse de “1.234,56”).</li>
+        <li><strong>Infra documentada</strong> em INFRA.md + PIPELINE.md: namespaces, réplicas, sealed secrets, runners.</li>
+        <li><strong>Mentoria prática:</strong> ensinei operação K8s hands-on neste cluster — sei explicar, não só aplicar yaml.</li>
+      </ul>
+      <p class="proof">Prova: <code>docs/INFRA.md</code> · <code>docs/PIPELINE.md</code> · <code>k8s/prod/</code></p>
+    </article>
+
+    <article class="proj">
+      <div class="proj-head"><h3>auditoria <span class="tag">agentes + MCP</span></h3>
+      <p class="stack">TypeScript · Claude Agent SDK · MCP · Vitest · coverage v8</p></div>
+      <p>Módulo fiscal com agentes de IA operando ferramentas reais: harness com teto de chamadas, retry travado e superfície explícita de tools. Teste de contrato compara cada ferramenta contra SQL independente — e inclui tentativa de injeção.</p>
+      <ul>
+        <li><strong>138 arquivos de teste</strong> no back/front, com coverage configurado.</li>
+        <li><strong>Fronteira com a SDK isolada</strong> num arquivo só — o resto do código não sabe que IA existe.</li>
+      </ul>
+      <p class="proof">Prova: <code>src/services/agentes-harness.ts</code> · <code>tests/ferramentas-fiscais.test.ts</code></p>
+    </article>
+
+    <article class="proj">
+      <div class="proj-head"><h3>FastDocs <span class="tag">MCP server</span></h3>
+      <p class="stack">TypeScript · Fastify · Next.js · MCP SDK · React Flow</p></div>
+      <p>Servidor MCP de documentação AI-first: detecta framework do repo, monta grafo de docs, expõe Postman Lite e GitHub Action. Detector com TDD por fixtures (tmpdir real, setup/teardown).</p>
+      <ul>
+        <li><strong>Detector testado</strong> para next-app-router, pages, NestJS e Express.</li>
+      </ul>
+      <p class="proof">Prova: <code>apps/mcp/src/analyzers/framework-detector.test.ts</code></p>
+    </article>
+
+    <article class="proj">
+      <div class="proj-head"><h3>railyard <span class="tag">plataforma</span></h3>
+      <p class="stack">TypeScript · pnpm + Turbo · Prisma · Vitest · Docker</p></div>
+      <p>PaaS self-hosted estilo Railway para uso próprio: git push, build zero-config, HTTPS, databases em um clique, environments efêmeros por PR. M0–M2 prontos, com design docs e critério de aceite por task.</p>
+      <ul>
+        <li><strong>125 arquivos de teste</strong>; tasks com checkbox e ordem de construção.</li>
+        <li>Quem constrói plataforma entende deploy — não só usa.</li>
+      </ul>
+      <p class="proof">Prova: <code>docs/design/architecture.md</code> · <code>docs/tasks/00-INDEX.md</code></p>
+    </article>
+  </section>
+
+  <section id="metodo" class="block">
+    <p class="sec-label">03 · Como eu trabalho</p>
+    <h2>Método: teste primeiro, número sempre</h2>
+    <div class="cols">
+      <div>
+        <h3>TDD e testes</h3>
+        <p>Teste não é cerimônia, é trava. Cada release do gateway lista quantos testes novos entraram e o placar final. Regra de dinheiro (conciliação, transferência) tem teste de borda em pt-BR.</p>
+        <p class="proof">2306/2306 · 301 suites · JUnit no Java · anti-SQL-injection</p>
+      </div>
+      <div>
+        <h3>CI/CD</h3>
+        <p>Todo merge roda migrations, tipos, testes e build. Verde vira release + imagem assinada + digest commitado — e o Fleet aplica sem ninguém digitar nada. Deploy é commit, não ritual.</p>
+        <p class="proof">PIPELINE.md · digest como gatilho · cutover planejado</p>
+      </div>
+      <div>
+        <h3>Resiliência</h3>
+        <p>Gateway escolhe assinatura pelo modelo, falha com 400 explicativo em vez de relay suicida, e expõe saúde e métricas. Erro claro é feature.</p>
+        <p class="proof">failover · 400/401 úteis · health + métricas</p>
+      </div>
+      <div>
+        <h3>Observabilidade</h3>
+        <p>Painel próprio no padrão “conclusão antes do gráfico”. No Java, Sentry captura exceção com contexto. Incidente vira post-mortem, não déjà-vu.</p>
+        <p class="proof">/__metrics · painel NOC · Sentry 7.22</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ia" class="block">
+    <p class="sec-label">04 · Mentalidade IA First</p>
+    <h2>IA como ferramenta de produção, não demo</h2>
+    <p class="sec-intro">Uso diário: agentes com travas, RAG validado ponta a ponta, gateway próprio para não depender de um provider. E código escrito com assistência de IA, revisado como se fosse de um junior talentoso: confio, verifico.</p>
+    <ul class="ticks">
+      <li><strong>Harness de agentes</strong> com teto de chamadas e retry travado, sobre a Claude Agent SDK.</li>
+      <li><strong>RAG fiscal</strong> com script e2e artigo→resposta fora do vitest (provedor real, validação real).</li>
+      <li><strong>MCP servers</strong> próprios: documentação (FastDocs) e ferramentas fiscais (auditoria).</li>
+      <li><strong>Gateway multi-provider</strong> em produção: troca de modelo sem trocar código.</li>
+    </ul>
+  </section>
+
+  <section id="javak8s" class="block">
+    <p class="sec-label">05 · O que a vaga mais quer</p>
+    <h2>Java e Kubernetes, sem truque</h2>
+    <div class="cols">
+      <div>
+        <h3>Java 17 + Spring Boot</h3>
+        <p>Não é “já vi tutorial”. É microsserviço em produção: controller REST multi-tenant, service com regra fiscal, datasource por tenant com HikariCP, testes JUnit, Dockerfile e compose. Commits meus, semana após semana.</p>
+<pre><code>@RestController
+@RequestMapping("/{tenant}/api/reports")
+public class ReportController {
+    private final ReportService reportService;
+    // constructor injection, sem field @Autowired
+</code></pre>
+        <p class="proof">jasper-service · Java 17 · Spring Boot 3.4.3 · Sentry</p>
+      </div>
+      <div>
+        <h3>Kubernetes GitOps</h3>
+        <p>Cluster RKE2 com Rancher, deploy por pull (Fleet), Kustomize separando forma de valores, segredos selados. E o diferencial raro: <strong>ensinei</strong> operação K8s neste ambiente — quem ensina entende o porquê de cada yaml.</p>
+<pre><code>k8s/prod/  fleet.yaml, kustomization.yaml,
+           deployment, service, redis,
+           ingress, sealed-*.yaml
+# forma idêntica à hml — CI quebra se divergir
+</code></pre>
+        <p class="proof">atendimentokonfig · docs/INFRA.md · k8s/prod + k8s/hml</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="diagramas" class="block">
+    <p class="sec-label">06 · Dois fluxos que eu opero</p>
+    <h2>Diagramas, não promessas</h2>
+
+    <h3 class="fig-title">Deploy GitOps: do merge ao pod, sem mão humana</h3>
+    <figure class="fig">
+      <svg viewBox="0 0 720 190" role="img" aria-label="Fluxo: merge em develop ou main dispara CI, gera imagem, commita digest e o Fleet aplica em homologação ou produção">
+        <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2fbf71"/></marker></defs>
+        <g font-family="ui-monospace,monospace" font-size="12" text-anchor="middle">
+          <rect x="8" y="70" width="110" height="44" rx="6" class="box"/><text x="63" y="88" class="t">merge</text><text x="63" y="104" class="s">develop/main</text>
+          <rect x="142" y="70" width="130" height="44" rx="6" class="box"/><text x="207" y="88" class="t">CI</text><text x="207" y="104" class="s">migrate·test·build</text>
+          <rect x="296" y="70" width="120" height="44" rx="6" class="box"/><text x="356" y="88" class="t">imagem</text><text x="356" y="104" class="s">assinada cosign</text>
+          <rect x="440" y="70" width="120" height="44" rx="6" class="box"/><text x="500" y="88" class="t">digest</text><text x="500" y="104" class="s">commit no k8s/</text>
+          <rect x="584" y="20" width="128" height="44" rx="6" class="box"/><text x="648" y="38" class="t">Fleet → HML</text><text x="648" y="54" class="s">1 réplica</text>
+          <rect x="584" y="120" width="128" height="44" rx="6" class="box"/><text x="648" y="138" class="t">Fleet → PROD</text><text x="648" y="154" class="s">2 réplicas</text>
+          <line x1="118" y1="92" x2="140" y2="92" class="ln" marker-end="url(#ar)"/>
+          <line x1="272" y1="92" x2="294" y2="92" class="ln" marker-end="url(#ar)"/>
+          <line x1="416" y1="92" x2="438" y2="92" class="ln" marker-end="url(#ar)"/>
+          <line x1="560" y1="82" x2="582" y2="48" class="ln" marker-end="url(#ar)"/>
+          <line x1="560" y1="102" x2="582" y2="138" class="ln" marker-end="url(#ar)"/>
+        </g>
+      </svg>
+      <figcaption>Conclusão: o gatilho do deploy é o commit do digest — o Fleet observa o repo, não o registry. Fonte: docs/PIPELINE.md.</figcaption>
+    </figure>
+
+    <h3 class="fig-title">Gateway lb-proxer: a requisição sempre cai no provider certo</h3>
+    <figure class="fig">
+      <svg viewBox="0 0 720 170" role="img" aria-label="Fluxo: cliente chama o gateway, o seletor escolhe a assinatura pelo modelo e despacha para Anthropic ou Meta, com métricas para o painel">
+        <g font-family="ui-monospace,monospace" font-size="12" text-anchor="middle">
+          <rect x="8" y="63" width="100" height="44" rx="6" class="box"/><text x="58" y="81" class="t">cliente</text><text x="58" y="97" class="s">/v1/messages</text>
+          <rect x="132" y="63" width="150" height="44" rx="6" class="box"/><text x="207" y="81" class="t">seletor</text><text x="207" y="97" class="s">modelo→assinatura</text>
+          <rect x="306" y="13" width="150" height="44" rx="6" class="box"/><text x="381" y="31" class="t">Anthropic</text><text x="381" y="47" class="s">claude-*</text>
+          <rect x="306" y="113" width="150" height="44" rx="6" class="box"/><text x="381" y="131" class="t">Meta</text><text x="381" y="147" class="s">muse-spark-*</text>
+          <rect x="480" y="63" width="130" height="44" rx="6" class="box"/><text x="545" y="81" class="t">/__metrics</text><text x="545" y="97" class="s">→ painel NOC</text>
+          <rect x="470" y="118" width="150" height="34" rx="6" class="box dim"/><text x="545" y="139" class="s">400 claro se sem conta</text>
+          <line x1="108" y1="85" x2="130" y2="85" class="ln" marker-end="url(#ar)"/>
+          <line x1="282" y1="75" x2="304" y2="40" class="ln" marker-end="url(#ar)"/>
+          <line x1="282" y1="95" x2="304" y2="130" class="ln" marker-end="url(#ar)"/>
+          <line x1="456" y1="35" x2="476" y2="72" class="ln dash"/>
+          <line x1="456" y1="135" x2="476" y2="98" class="ln dash"/>
+        </g>
+      </svg>
+      <figcaption>Conclusão: antes caía sempre na primeira assinatura; agora o modelo escolhe a conta — 23 testes travam a matriz. Fonte: releases/v0.4.0.</figcaption>
+    </figure>
+  </section>
+
+  <section id="contato" class="block">
+    <p class="sec-label">07 · Próximo passo</p>
+    <h2>Bora conversar?</h2>
+    <p class="sec-intro">Me chama que eu abro o código na call: mostro o service Java, o pipeline rodando e o gateway em produção. Repos privados se abrem com um convite — o conhecimento eu já abro aqui.</p>
+    <p class="hero-links">
+      <a class="btn" href="https://github.com/PedroZey">GitHub: PedroZey</a>
+      <a class="btn ghost" href="https://carreiras.ifood.com.br/job/8881911002/">Vaga-alvo: req 52447</a>
+    </p>
+    <p class="fineprint">Vaga: Senior Full Stack Software Engineer · B2C Tech Benefícios · CLT · Brasil/Osasco.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <p>PedroZey · portfólio estático feito à mão — HTML + CSS + JS, sem framework, sem tracker.</p>
+    <p class="fineprint">Números verificados nos repos em 2026-10-20. Trechos curtos, sem segredos.</p>
+  </div>
+</footer>
+<script src="app.js" defer></script>
+</body>
+</html>
