@@ -144,6 +144,12 @@ tr.radar td { color: var(--mut); font-style: italic; background: #f1f0eb; }
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .proj:hover { border-color: #b9b8b0; box-shadow: 0 3px 10px rgba(20, 20, 18, 0.08); }
+.proj.featured { background: var(--solid); color: #f2f1ec; border-color: var(--solid); }
+.proj.featured .stack { color: #a9a8a1; }
+.proj.featured .idx { color: #8d8c85; }
+.proj.featured .tag { color: #161513; background: #f6f6f3; border-color: #f6f6f3; font-weight: 700; }
+.proj.featured strong { color: #fff; }
+.proj.featured:hover { border-color: #000; box-shadow: 0 4px 14px rgba(20, 20, 18, 0.22); }
 .proj-head h3 { font-family: var(--serif); font-size: 1.45rem; letter-spacing: -0.01em; }
 .proj .idx { font-family: var(--mono); font-size: 0.85rem; color: var(--dim); margin-right: 10px; font-weight: 400; }
 .tag {
