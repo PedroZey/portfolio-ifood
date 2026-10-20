@@ -133,7 +133,9 @@ thead th {
 }
 section[id] { scroll-margin-top: 72px; }
 tbody tr:nth-child(even) { background: #fafaf7; }
-tbody td:first-child { font-weight: 600; white-space: nowrap; }
+tbody tr:hover { background: #f1f0ea; }
+tbody td { vertical-align: middle; }
+tbody td:first-child { font-weight: 700; font-size: 0.95rem; white-space: nowrap; }
 tr.radar td { color: var(--mut); font-style: italic; background: #f1f0eb; }
 
 /* projects */
