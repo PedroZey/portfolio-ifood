@@ -134,7 +134,7 @@ thead th {
 section[id] { scroll-margin-top: 72px; }
 tbody tr:nth-child(even) { background: #fafaf7; }
 tbody tr:hover { background: #f1f0ea; }
-tbody td { vertical-align: middle; }
+tbody td { vertical-align: middle; padding: 18px 16px; line-height: 1.6; }
 tbody td:first-child { font-weight: 700; font-size: 0.95rem; white-space: nowrap; }
 tr.radar td { color: var(--mut); font-style: italic; background: #f1f0eb; }
 
