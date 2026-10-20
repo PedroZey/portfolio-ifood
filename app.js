@@ -84,6 +84,7 @@
         "L" + (bx + nx * 4.2) + "," + (by + ny * 4.2) +
         "L" + (bx - nx * 4.2) + "," + (by - ny * 4.2) + "Z");
       head.setAttribute("class", "flow-head");
+      head.setAttribute("pathLength", "1");
       head.setAttribute("stroke", "#161513");
       head.setAttribute("stroke-width", "1.5");
       head.setAttribute("stroke-linejoin", "round");

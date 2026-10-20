@@ -237,12 +237,15 @@ tr.radar td { color: var(--mut); font-style: italic; background: #f1f0eb; }
   35%, 100% { stroke-dashoffset: 0; }
 }
 .fig.draw .arrow-anim .flow-head {
-  opacity: 0;
+  fill-opacity: 0;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
   animation: headpop 2.2s ease-out infinite;
 }
 @keyframes headpop {
-  0%, 30% { opacity: 0; }
-  42%, 100% { opacity: 1; }
+  0%, 28% { stroke-dashoffset: 1; fill-opacity: 0; }
+  40% { stroke-dashoffset: 0; fill-opacity: 0; }
+  46%, 100% { stroke-dashoffset: 0; fill-opacity: 1; }
 }
 .fig figcaption { font-size: 0.86rem; color: var(--mut); margin-top: 10px; }
 
